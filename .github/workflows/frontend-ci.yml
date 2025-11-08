@@ -1,13 +1,10 @@
-# File: .github/workflows/frontend-ci.yml
-
-name: Frontend App CI/CD
+# File: (Repo Frontend)/.github/workflows/frontend-ci.yml
+name: 2. FRONTEND APP SERVICE FLOW
 
 on:
   push:
     branches:
-      - main # Sesuaikan dengan nama branch utama Anda (misalnya: master)
-    paths:
-      - 'ToDo-React/front-end/**' # Hanya trigger jika file di folder frontend berubah
+      - main 
 
 env:
   DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
@@ -30,10 +27,8 @@ jobs:
       - name: Build and Push Frontend Image
         uses: docker/build-push-action@v5
         with:
-          context: ./ToDo-React/front-end
+          context: ./ # KONTEKS BARU: Ambil dari root repo frontend
           push: true
-          # Tag: johanagustianpohan/todo-web-app-devops:frontend-latest
           tags: ${{ env.DOCKER_USER }}/todo-web-app-devops:frontend-latest
           build-args: |
-            # PENTING: Gunakan localhost:4000 agar browser (host) bisa mengakses API
             VITE_API_URL=http://localhost:4000
