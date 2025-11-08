@@ -1,0 +1,5 @@
+# Abaikan folder yang hanya relevan di lingkungan lokal
+node_modules
+dist
+.vscode
+.git
