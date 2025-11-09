@@ -144,7 +144,7 @@ export default function TodoList() {
               <MDBCardBody className="py-4 px-4 px-md-5">
                 <p className="h1 text-center mt-3 mb-4 pb-3 text-primary">
                   <MDBIcon fas icon="check-square" className="me-1" />
-                  <u>My Todo-List</u>
+                  <u>My Todo-s</u>
                 </p>
                 <div className="pb-2">
                   <MDBCard>
